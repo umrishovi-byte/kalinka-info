@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог выставки — Мебельная фабрика «Калинка»</title>
+    <style>
+        /* Сброс базовых стилей и шрифты */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.4;
+        }
+
+        /* Контейнер */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 15px;
+        }
+
+        /* Заголовок страницы */
+        .page-title {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Сетка каталога */
+        .exhibition-grid {
+            display: grid;
+            /* По умолчанию на мобильных устройствах 2 колонки */
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        /* Карточка товара (теперь это ссылка) */
+        .exhibition-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none; /* Убираем подчеркивание ссылок */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .exhibition-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Квадратный оберточный блок для картинки-заглушки */
+        .card-image-wrapper {
+            width: 100%;
+            padding-top: 100%; /* Гарантирует пропорцию 1:1 (квадрат) */
+            position: relative;
+            background-color: #e9ecef;
+        }
+
+        /* SVG / Картинка внутри квадрата */
+        .card-image-wrapper img,
+        .card-image-wrapper svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Название карточки */
+        .card-title {
+            padding: 12px 10px;
+            font-size: 14px;
+            font-weight: 600;
+            text-align: center;
+            color: #212529;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+            min-height: 52px;
+        }
+
+        /* Адаптив под средние экраны (планшеты) — 3-4 колонки */
+        @media (min-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+            .page-title {
+                font-size: 32px;
+                margin-bottom: 35px;
+            }
+            .exhibition-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+            .card-title {
+                font-size: 15px;
+                padding: 14px 12px;
+            }
+        }
+
+        /* Адаптив под десктопы — 5 колонок (все 10 влезают в 2 ряда) */
+        @media (min-width: 992px) {
+            .exhibition-grid {
+                grid-template-columns: repeat(5, 1fr);
+                gap: 24px;
+            }
+            .card-title {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="container">
+        <h1 class="page-title">Каталог выставки</h1>
+
+        <div class="exhibition-grid">
+
+            <!-- 1. К-23 -->
+            <a href="https://umrishovi-byte.github.io/kalinka-info/raw/main/K23.pdf" target="_blank" class="exhibition-card">
+                <div class="card-image-wrapper">
+                    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="100%" height="100%" fill="#dee2e6"/>
+                        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#868e96" font-size="16" font-family="sans-serif">К-23</text>
+                    </svg>
+                </div>
+                <h2 class="card-title">К-23</h2>
+            </a>
+
+            <!-- 2. К-30 -->
+            <a href="https://github.com/ВАШ_АККАУНТ/ВАШ_РЕПОЗИТОРИЙ/raw/main/K-30.pdf" target="_blank" class="exhibition-card">
+                <div class="card-image-wrapper">
+                    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="100%" height="100%" fill="#dee2e6"/>
+                        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#868e96" font-size="16" font-family="sans-serif">К-30</text>
+                    </svg>
+                </div>
+                <h2 class="card-title">К-30</h2>
+            </a>
+
+            <!-- 3. К-31 -->
+            <a href="https://github.com/ВАШ_АККАУНТ/ВАШ_РЕПОЗИТОРИЙ/raw/main/K-31.pdf" target="_blank" class="exhibition-card">
+                <div class="card-image-wrapper">
+                    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="100%" height="100%" fill="#dee2e6"/>
+                        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#868e96" font-size="16" font-family="sans-serif">К-31</text>
+                    </svg>
+                </div>
+                <h2 class="card-title">К-31</h2>
+            </a>
+
+            <!-- 4. К-32 -->
+            <a href="https://github.com/ВАШ_АККАУНТ/ВАШ_РЕПОЗИТОРИЙ/raw/main/K-32.pdf" target="_blank" class="exhibition-card">
+                <div class="card-image-wrapper">
+                    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="100%" height="100%" fill="#dee2e6"/>
+                        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#868e96" font-size="16" font-family="sans-serif">К-32</text>
+                    </svg>
+                </div>
+                <h2 class="card-title">К-32</h2>
+            </a>
+
+            <!-- 5. К-33 -->
+            <a href="https://github.com/ВАШ_АККАУНТ/ВАШ_РЕПОЗИТОРИЙ/raw/main/K-33.pdf" target="_blank" class="exhibition-card">
+                <div class="card-image-wrapper">
+                    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="100%" height="100%" fill="#dee2e6"/>
+                        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#868e96" font-size="16" font-family="sans-serif">К-33</text>
+                    </svg>
+                </div>
+                <h2 class="card-title">К-33</h2>
+            </a>
+
+            <!-- 6. К-34 -->
+            <a href="https://github.com/ВАШ_АККАУНТ/ВАШ_РЕПОЗИТОРИЙ/raw/main/K-34.pdf" target="_blank" class="exhibition-card">
+                <div class="card-image-wrapper">
+                    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="100%" height="100%" fill="#dee2e6"/>
+                        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#868e96" font-size="16" font-family="sans-serif">К-34</text>
+                    </svg>
+                </div>
+                <h2 class="card-title">К-34</h2>
+            </a>
+
+            <!-- 7. К-37 -->
+            <a href="https://github.com/ВАШ_АККАУНТ/ВАШ_РЕПОЗИТОРИЙ/raw/main/K-37.pdf" target="_blank" class="exhibition-card">
+                <div class="card-image-wrapper">
+                    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="100%" height="100%" fill="#dee2e6"/>
+                        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#868e96" font-size="16" font-family="sans-serif">К-37</text>
+                    </svg>
+                </div>
+                <h2 class="card-title">К-37</h2>
+            </a>
+
+            <!-- 8. Кресло Элеганс-2 -->
+            <a href="https://github.com/ВАШ_АККАУНТ/ВАШ_РЕПОЗИТОРИЙ/raw/main/Kreslo-Elegans-2.pdf" target="_blank" class="exhibition-card">
+                <div class="card-image-wrapper">
+                    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="100%" height="100%" fill="#dee2e6"/>
+                        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#868e96" font-size="14" font-family="sans-serif">Элеганс-2</text>
+                    </svg>
+                </div>
+                <h2 class="card-title">Кресло Элеганс-2</h2>
+            </a>
+
+            <!-- 9. Пуф к Элеганс-2 -->
+            <a href="https://github.com/ВАШ_АККАУНТ/ВАШ_РЕПОЗИТОРИЙ/raw/main/Puf-k-Elegans-2.pdf" target="_blank" class="exhibition-card">
+                <div class="card-image-wrapper">
+                    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="100%" height="100%" fill="#dee2e6"/>
+                        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#868e96" font-size="14" font-family="sans-serif">Пуф Элеганс-2</text>
+                    </svg>
+                </div>
+                <h2 class="card-title">Пуф к Элеганс-2</h2>
+            </a>
+
+            <!-- 10. Пуф-стол кожа к К-34 -->
+            <a href="https://github.com/ВАШ_АККАУNТ/ВАШ_РЕПОЗИТОРИЙ/raw/main/Puf-stol-k-K-34.pdf" target="_blank" class="exhibition-card">
+                <div class="card-image-wrapper">
+                    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="100%" height="100%" fill="#dee2e6"/>
+                        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#868e96" font-size="14" font-family="sans-serif">Пуф-стол К-34</text>
+                    </svg>
+                </div>
+                <h2 class="card-title">Пуф-стол кожа к К-34</h2>
+            </a>
+
+        </div>
+    </main>
+
+</body>
+</html>
