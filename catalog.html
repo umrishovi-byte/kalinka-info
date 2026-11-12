@@ -26,12 +26,41 @@
             padding: 20px 15px;
         }
 
+        /* Блок шапки с логотипом */
+        .site-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .site-logo {
+            max-width: 220px; /* Размер логотипа на ПК */
+            width: 100%;
+            height: auto;
+            display: inline-block;
+        }
+
         /* Заголовок страницы */
         .page-title {
             text-align: center;
-            font-size: 28px;
+            font-size: 26px;
             font-weight: 700;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Стили разделов */
+        .catalog-section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #212529;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #dee2e6;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
@@ -39,19 +68,19 @@
         /* Сетка каталога */
         .exhibition-grid {
             display: grid;
-            /* По умолчанию на мобильных устройствах 2 колонки */
+            /* По умолчанию на мобильных устройствах строго 2 колонки */
             grid-template-columns: repeat(2, 1fr);
             gap: 15px;
         }
 
-        /* Карточка товара (теперь это ссылка) */
+        /* Карточка товара (ссылка) */
         .exhibition-card {
             background-color: #ffffff;
             border-radius: 8px;
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            text-decoration: none; /* Убираем подчеркивание ссылок */
+            text-decoration: none;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
@@ -64,13 +93,12 @@
         /* Квадратный оберточный блок для картинки-заглушки */
         .card-image-wrapper {
             width: 100%;
-            padding-top: 100%; /* Гарантирует пропорцию 1:1 (квадрат) */
+            padding-top: 100%;
             position: relative;
             background-color: #e9ecef;
         }
 
-        /* SVG / Картинка внутри квадрата */
-        .card-image-wrapper img,
+        /* SVG / Заглушка внутри квадрата */
         .card-image-wrapper svg {
             position: absolute;
             top: 0;
@@ -94,14 +122,20 @@
             min-height: 52px;
         }
 
-        /* Адаптив под средние экраны (планшеты) — 3-4 колонки */
+        /* Адаптив под средние экраны (планшеты) — 3 колонки */
         @media (min-width: 600px) {
             .container {
                 padding: 30px 20px;
             }
+            .site-logo {
+                max-width: 260px;
+            }
             .page-title {
                 font-size: 32px;
-                margin-bottom: 35px;
+                margin-bottom: 40px;
+            }
+            .section-title {
+                font-size: 22px;
             }
             .exhibition-grid {
                 grid-template-columns: repeat(3, 1fr);
@@ -128,198 +162,215 @@
 <body>
 
     <main class="container">
+        <!-- ЛОГОТИП В САМОМ ВЕРХУ ПОСЕРЕДИНЕ -->
+        <header class="site-header">
+            <img src="kalinkalogoblack.png" alt="Мебельная фабрика «Калинка»" class="site-logo">
+        </header>
+
         <h1 class="page-title">Каталог выставки</h1>
 
-        <div class="exhibition-grid">
+        <!-- РАЗДЕЛ: ДИВАНЫ (Зелёный #2e7d32) -->
+        <section class="catalog-section">
+            <h2 class="section-title">Диваны</h2>
+            <div class="exhibition-grid">
 
-            <!-- 1. К-23 -->
-            <a href="http://kalinka-info.ru/K23.pdf" target="_blank" class="exhibition-card">
-                <div class="card-image-wrapper">
-                    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="100%" height="100%" fill="green"/>
-                        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-size="16" font-family="sans-serif">К-23</text>
-                    </svg>
-                </div>
-                <h2 class="card-title">Диван К-23</h2>
-            </a>
+                <a href="http://kalinka-info.ru/K21.pdf" target="_blank" class="exhibition-card">
+                    <div class="card-image-wrapper">
+                        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="100%" height="100%" fill="#2e7d32"/>
+                            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-size="16" font-family="sans-serif">К-21</text>
+                        </svg>
+                    </div>
+                    <h2 class="card-title">Диван К-21</h2>
+                </a>
 
-            <!-- 2. К-30 -->
-            <a href="http://kalinka-info.ru/K30.pdf" target="_blank" class="exhibition-card">
-                <div class="card-image-wrapper">
-                    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="100%" height="100%" fill="green"/>
-                        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-size="16" font-family="sans-serif">К-30</text>
-                    </svg>
-                </div>
-                <h2 class="card-title">Диван К-30</h2>
-            </a>
+                <a href="http://kalinka-info.ru/K23.pdf" target="_blank" class="exhibition-card">
+                    <div class="card-image-wrapper">
+                        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="100%" height="100%" fill="#2e7d32"/>
+                            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-size="16" font-family="sans-serif">К-23</text>
+                        </svg>
+                    </div>
+                    <h2 class="card-title">Диван К-23</h2>
+                </a>
 
-            <!-- 3. К-31 -->
-            <a href="http://kalinka-info.ru/K31.pdf" target="_blank" class="exhibition-card">
-                <div class="card-image-wrapper">
-                    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="100%" height="100%" fill="green"/>
-                        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-size="16" font-family="sans-serif">К-31</text>
-                    </svg>
-                </div>
-                <h2 class="card-title">Диван К-31</h2>
-            </a>
+                <a href="http://kalinka-info.ru/K30.pdf" target="_blank" class="exhibition-card">
+                    <div class="card-image-wrapper">
+                        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="100%" height="100%" fill="#2e7d32"/>
+                            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-size="16" font-family="sans-serif">К-30</text>
+                        </svg>
+                    </div>
+                    <h2 class="card-title">Диван К-30</h2>
+                </a>
 
-            <!-- 4. К-32 -->
-            <a href="http://kalinka-info.ru/K32.pdf" target="_blank" class="exhibition-card">
-                <div class="card-image-wrapper">
-                    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="100%" height="100%" fill="green"/>
-                        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-size="16" font-family="sans-serif">К-32</text>
-                    </svg>
-                </div>
-                <h2 class="card-title">Диван К-32</h2>
-            </a>
+                <a href="http://kalinka-info.ru/K31.pdf" target="_blank" class="exhibition-card">
+                    <div class="card-image-wrapper">
+                        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="100%" height="100%" fill="#2e7d32"/>
+                            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-size="16" font-family="sans-serif">К-31</text>
+                        </svg>
+                    </div>
+                    <h2 class="card-title">Диван К-31</h2>
+                </a>
 
-            <!-- 5. К-33 -->
-            <a href="http://kalinka-info.ru/K33.pdf" target="_blank" class="exhibition-card">
-                <div class="card-image-wrapper">
-                    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="100%" height="100%" fill="red"/>
-                        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-size="16" font-family="sans-serif">К-33</text>
-                    </svg>
-                </div>
-                <h2 class="card-title">Диван К-33</h2>
-            </a>
+                <a href="http://kalinka-info.ru/K32.pdf" target="_blank" class="exhibition-card">
+                    <div class="card-image-wrapper">
+                        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="100%" height="100%" fill="#2e7d32"/>
+                            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-size="16" font-family="sans-serif">К-32</text>
+                        </svg>
+                    </div>
+                    <h2 class="card-title">Диван К-32</h2>
+                </a>
 
-            <!-- 6. К-34 -->
-            <a href="http://kalinka-info.ru/K34.pdf" target="_blank" class="exhibition-card">
-                <div class="card-image-wrapper">
-                    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="100%" height="100%" fill="red"/>
-                        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-size="16" font-family="sans-serif">К-34</text>
-                    </svg>
-                </div>
-                <h2 class="card-title">Диван К-34</h2>
-            </a>
+                <a href="http://kalinka-info.ru/K33.pdf" target="_blank" class="exhibition-card">
+                    <div class="card-image-wrapper">
+                        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="100%" height="100%" fill="#2e7d32"/>
+                            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-size="16" font-family="sans-serif">К-33</text>
+                        </svg>
+                    </div>
+                    <h2 class="card-title">Диван К-33</h2>
+                </a>
 
-            <!-- 7. К-37 -->
-            <a href="http://kalinka-info.ru/K37.pdf" target="_blank" class="exhibition-card">
-                <div class="card-image-wrapper">
-                    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="100%" height="100%" fill="red"/>
-                        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-size="16" font-family="sans-serif">К-37</text>
-                    </svg>
-                </div>
-                <h2 class="card-title">Диван К-37</h2>
-            </a>
+                <a href="http://kalinka-info.ru/K34.pdf" target="_blank" class="exhibition-card">
+                    <div class="card-image-wrapper">
+                        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="100%" height="100%" fill="#2e7d32"/>
+                            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-size="16" font-family="sans-serif">К-34</text>
+                        </svg>
+                    </div>
+                    <h2 class="card-title">Диван К-34</h2>
+                </a>
 
-            <!-- 8. Кресло Элеганс-2 -->
-            <a href="http://kalinka-info.ru/Elegance2.pdf" target="_blank" class="exhibition-card">
-                <div class="card-image-wrapper">
-                    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="100%" height="100%" fill="green"/>
-                        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-size="14" font-family="sans-serif">Элеганс-2</text>
-                    </svg>
-                </div>
-                <h2 class="card-title">Кресло Элеганс-2</h2>
-            </a>
+                <a href="http://kalinka-info.ru/K36.pdf" target="_blank" class="exhibition-card">
+                    <div class="card-image-wrapper">
+                        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="100%" height="100%" fill="#2e7d32"/>
+                            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-size="16" font-family="sans-serif">К-36</text>
+                        </svg>
+                    </div>
+                    <h2 class="card-title">Диван К-36</h2>
+                </a>
 
-            <!-- 9. К-21 -->
-            <a href="http://kalinka-info.ru/K21.pdf" target="_blank" class="exhibition-card">
-                <div class="card-image-wrapper">
-                    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="100%" height="100%" fill="green"/>
-                        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-size="16" font-family="sans-serif">К-21</text>
-                    </svg>
-                </div>
-                <h2 class="card-title">Диван К-21</h2>
-            </a>
+                <a href="http://kalinka-info.ru/K37.pdf" target="_blank" class="exhibition-card">
+                    <div class="card-image-wrapper">
+                        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="100%" height="100%" fill="#2e7d32"/>
+                            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-size="16" font-family="sans-serif">К-37</text>
+                        </svg>
+                    </div>
+                    <h2 class="card-title">Диван К-37</h2>
+                </a>
 
-            <!-- 10. К-36 -->
-            <a href="http://kalinka-info.ru/K36.pdf" target="_blank" class="exhibition-card">
-                <div class="card-image-wrapper">
-                    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="100%" height="100%" fill="red"/>
-                        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-size="16" font-family="sans-serif">К-36</text>
-                    </svg>
-                </div>
-                <h2 class="card-title">Диван К-36</h2>
-            </a>
+            </div>
+        </section>
 
-            <!-- 11. Ideal -->
-            <a href="http://kalinka-info.ru/Ideal.pdf" target="_blank" class="exhibition-card">
-                <div class="card-image-wrapper">
-                    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="100%" height="100%" fill="#4a90e2"/>
-                        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-size="16" font-family="sans-serif">Ideal</text>
-                    </svg>
-                </div>
-                <h2 class="card-title">Кресло Иддилия</h2>
-            </a>
+        <!-- РАЗДЕЛ: КРЕСЛА И ПУФЫ (Синий #1976d2) -->
+        <section class="catalog-section">
+            <h2 class="section-title">Кресла и Пуфы</h2>
+            <div class="exhibition-grid">
 
-            <!-- 12. Like -->
-            <a href="http://kalinka-info.ru/Like.pdf" target="_blank" class="exhibition-card">
-                <div class="card-image-wrapper">
-                    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="100%" height="100%" fill="#4a90e2"/>
-                        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-size="16" font-family="sans-serif">Like</text>
-                    </svg>
-                </div>
-                <h2 class="card-title">Кресло Лайк</h2>
-            </a>
+                <a href="http://kalinka-info.ru/Elegance2.pdf" target="_blank" class="exhibition-card">
+                    <div class="card-image-wrapper">
+                        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="100%" height="100%" fill="#1976d2"/>
+                            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-size="14" font-family="sans-serif">Элеганс-2</text>
+                        </svg>
+                    </div>
+                    <h2 class="card-title">Кресло Элеганс-2</h2>
+                </a>
 
-            <!-- 13. Cube -->
-            <a href="http://kalinka-info.ru/Cube.pdf" target="_blank" class="exhibition-card">
-                <div class="card-image-wrapper">
-                    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="100%" height="100%" fill="#f5a623"/>
-                        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-size="16" font-family="sans-serif">Cube</text>
-                    </svg>
-                </div>
-                <h2 class="card-title">Кресло Куб</h2>
-            </a>
+                <a href="http://kalinka-info.ru/Ideal.pdf" target="_blank" class="exhibition-card">
+                    <div class="card-image-wrapper">
+                        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="100%" height="100%" fill="#1976d2"/>
+                            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-size="16" font-family="sans-serif">Ideal</text>
+                        </svg>
+                    </div>
+                    <h2 class="card-title">Кресло Ideal</h2>
+                </a>
 
-            <!-- 14. Sharm -->
-            <a href="http://kalinka-info.ru/Sharm.pdf" target="_blank" class="exhibition-card">
-                <div class="card-image-wrapper">
-                    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="100%" height="100%" fill="#f5a623"/>
-                        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-size="16" font-family="sans-serif">Sharm</text>
-                    </svg>
-                </div>
-                <h2 class="card-title">Кресло Шарм</h2>
-            </a>
+                <a href="http://kalinka-info.ru/Like.pdf" target="_blank" class="exhibition-card">
+                    <div class="card-image-wrapper">
+                        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="100%" height="100%" fill="#1976d2"/>
+                            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-size="16" font-family="sans-serif">Like</text>
+                        </svg>
+                    </div>
+                    <h2 class="card-title">Кресло Like</h2>
+                </a>
 
-            <!-- 15. ChairHarmony -->
-            <a href="http://kalinka-info.ru/ChairHarmony.pdf" target="_blank" class="exhibition-card">
-                <div class="card-image-wrapper">
-                    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="100%" height="100%" fill="#9013fe"/>
-                        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-size="14" font-family="sans-serif">Harmony</text>
-                    </svg>
-                </div>
-                <h2 class="card-title">Стул Гармония</h2>
-            </a>
+                <a href="http://kalinka-info.ru/Cube.pdf" target="_blank" class="exhibition-card">
+                    <div class="card-image-wrapper">
+                        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="100%" height="100%" fill="#1976d2"/>
+                            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-size="16" font-family="sans-serif">Cube</text>
+                        </svg>
+                    </div>
+                    <h2 class="card-title">Пуф Cube</h2>
+                </a>
 
-            <!-- 16. TableAria -->
-            <a href="http://kalinka-info.ru/TableAria.pdf" target="_blank" class="exhibition-card">
-                <div class="card-image-wrapper">
-                    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="100%" height="100%" fill="#9013fe"/>
-                        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-size="14" font-family="sans-serif">Table Aria</text>
-                    </svg>
-                </div>
-                <h2 class="card-title">Стол Aria</h2>
-            </a>
+                <a href="http://kalinka-info.ru/Sharm.pdf" target="_blank" class="exhibition-card">
+                    <div class="card-image-wrapper">
+                        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="100%" height="100%" fill="#1976d2"/>
+                            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-size="16" font-family="sans-serif">Sharm</text>
+                        </svg>
+                    </div>
+                    <h2 class="card-title">Кресло Sharm</h2>
+                </a>
 
-            <!-- 17. Kalinka 2026 November -->
-            <a href="http://kalinka-info.ru/Kalinka2026November.pdf" target="_blank" class="exhibition-card">
-                <div class="card-image-wrapper">
-                    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="100%" height="100%" fill="#9013fe"/>
-                        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-size="14" font-family="sans-serif">Ноябрь 2026</text>
-                    </svg>
-                </div>
-                <h2 class="card-title">Каталог Калинка Ноябрь 2026</h2>
-            </a>
+            </div>
+        </section>
 
-        </div>
+        <!-- РАЗДЕЛ: СТОЛЫ И СТУЛЬЯ (Оранжевый #e65100) -->
+        <section class="catalog-section">
+            <h2 class="section-title">Столы и стулья</h2>
+            <div class="exhibition-grid">
+
+                <a href="http://kalinka-info.ru/ChairHarmony.pdf" target="_blank" class="exhibition-card">
+                    <div class="card-image-wrapper">
+                        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="100%" height="100%" fill="#e65100"/>
+                            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-size="14" font-family="sans-serif">Harmony</text>
+                        </svg>
+                    </div>
+                    <h2 class="card-title">Стул Chair Harmony</h2>
+                </a>
+
+                <a href="http://kalinka-info.ru/TableAria.pdf" target="_blank" class="exhibition-card">
+                    <div class="card-image-wrapper">
+                        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="100%" height="100%" fill="#e65100"/>
+                            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-size="14" font-family="sans-serif">Table Aria</text>
+                        </svg>
+                    </div>
+                    <h2 class="card-title">Стол Table Aria</h2>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- РАЗДЕЛ: ДРУГОЕ (КАТАЛОГ) (Графитовый #37474f) -->
+        <section class="catalog-section">
+            <h2 class="section-title">Другое (Каталог)</h2>
+            <div class="exhibition-grid">
+
+                <a href="http://kalinka-info.ru/Kalinka2026November.pdf" target="_blank" class="exhibition-card">
+                    <div class="card-image-wrapper">
+                        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="100%" height="100%" fill="#37474f"/>
+                            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-size="14" font-family="sans-serif">Ноябрь 2026</text>
+                        </svg>
+                    </div>
+                    <h2 class="card-title">Каталог Калинка Ноябрь 2026</h2>
+                </a>
+
+            </div>
+        </section>
+
     </main>
 
 </body>
